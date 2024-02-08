@@ -27,4 +27,8 @@ public class BibliaService {
     public List<Versiculo> findVersiculosByCapitulo(long idLivro, long idCapitulo){
         return versiculoDAO.findVersiculos(idLivro, idCapitulo);
     }
+
+    public List<Versiculo> findByQuery(String query){
+        return versiculoDAO.findByQuery("%" + query + "%");
+    }
 }

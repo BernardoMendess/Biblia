@@ -11,4 +11,8 @@ public interface VersiculoDAO extends CrudRepository<Versiculo, Long> {
     @Query("SELECT * FROM versiculos v WHERE (v.ver_liv_id = :idLivro AND v.ver_capitulo =:idCapitulo)" +
             " ORDER BY id ASC ")
     List<Versiculo> findVersiculos(long idLivro, long idCapitulo);
+
+    @Query("SELECT * FROM versiculos v WHERE (v.ver_texto LIKE :query)" +
+            " ORDER BY id ASC ")
+    List<Versiculo> findByQuery(String query);
 }

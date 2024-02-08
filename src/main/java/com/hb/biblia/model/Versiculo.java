@@ -11,7 +11,7 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Versiculo {
     @Id
     private long Id;
-    private long verLivid;
+    private long verLivId;
     private long verCapitulo;
     private long verVersiculo;
     private String verTexto;
