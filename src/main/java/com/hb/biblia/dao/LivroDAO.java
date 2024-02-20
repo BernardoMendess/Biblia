@@ -13,4 +13,6 @@ public interface LivroDAO extends CrudRepository<Livro, Long> {
 
     @Query("SELECT * FROM livros l WHERE l.id = :id")
     Livro findLivroById(long id);
+
+    List<Livro> findAll();
 }

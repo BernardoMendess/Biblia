@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testamento</title>
+    <link rel="stylesheet" href="../../static/css/3rd/bootstrap.min.css" media="screen" th:href="@{/css/3rd/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="~{ layout/navbar :: navbar}"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Antigo Testamento</h2>
+            <div th:each="livro : ${livros}" th:if="${livro.livTesId == 1}">
+                <a th:href="@{/capitulo/{id}(id=${livro.id})}" th:text="${livro.livNome}"></a>
+            </div>
+        </div>
+        <div class="col">
+            <h2>Novo Testamento</h2>
+            <div th:each="livro : ${livros}" th:if="${livro.livTesId == 2}">
+                <a th:href="@{/capitulo/{id}(id=${livro.id})}" th:text="${livro.livNome}"></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

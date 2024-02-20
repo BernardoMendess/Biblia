@@ -32,4 +32,8 @@ public class BibliaService {
     public List<VersiculoComDependencias> findByQuery(String query){
         return versiculoDAO.findByQuery("%" + query + "%");
     }
+
+    public List<Livro> findAllLivros(){
+        return livroDAO.findAll();
+    }
 }

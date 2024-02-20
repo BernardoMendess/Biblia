@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Livro</title>
+
+    <link rel="stylesheet" href="../../static/css/3rd/bootstrap.min.css" media="screen" th:href="@{/css/3rd/bootstrap.min.css}">
+
+</head>
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-light mb-3" data-bs-theme="light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">BÍBLIA ALMEIDA CORRIGIDA FIEL</a>
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Antigo Testamento</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" th:href="@{/livro}">Listar livros</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Novo Testamento</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Listar autores</a>
+                    </div>
+                </li>
+            </ul>
+            <a class="d-flex" href="#">
+                <form th:action="@{/versiculos}" method="POST" class="form-group d-flex">
+                    <input type="text" placeholder="Buscar na Bíblia" name="query" class="form-control">
+                    <button type="submit" class="btn btn-primary">BUSCAR</button>
+                </form>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script src="../../static/js/3rd/popper.min.js" th:src="@{/js/3rd/popper.min.js}"></script>
+<script src="../../static/js/3rd/bootstrap.min.js" th:src="@{/js/3rd/bootstrap.min.js}"></script>
+
+</body>
+</html>

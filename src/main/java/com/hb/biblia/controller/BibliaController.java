@@ -24,16 +24,18 @@ public class BibliaController {
                 .addObject("versiculos", versiculos);
     }
 
-    @GetMapping("/testamento")
-    public String getTestamento(){
-        return "testamento/get";
+    @GetMapping("/biblia")
+    public ModelAndView getTestamento(){
+
+        return new ModelAndView("testamento/list")
+                .addObject("livros", bibliaService.findAllLivros());
     }
 
-    @GetMapping("/livro/{id}")
-    public ModelAndView getLivros(@PathVariable Long id){
-        return new ModelAndView("livro/list")
-                .addObject("livros", bibliaService.findAllLivrosByTestamento(id));
-    }
+//    @GetMapping("/livro/{id}")
+//    public ModelAndView getLivros(@PathVariable Long id){
+//        return new ModelAndView("livro/list")
+//                .addObject("livros", bibliaService.findAllLivrosByTestamento(id));
+//    }
 
     @GetMapping("/capitulo/{id}")
     public ModelAndView getCapitulos(@PathVariable Long id){
