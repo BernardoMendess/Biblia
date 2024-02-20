@@ -4,6 +4,7 @@ import com.hb.biblia.dao.LivroDAO;
 import com.hb.biblia.dao.VersiculoDAO;
 import com.hb.biblia.model.Livro;
 import com.hb.biblia.model.Versiculo;
+import com.hb.biblia.model.VersiculoComDependencias;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,7 @@ public class BibliaService {
         return versiculoDAO.findVersiculos(idLivro, idCapitulo);
     }
 
-    public List<Versiculo> findByQuery(String query){
+    public List<VersiculoComDependencias> findByQuery(String query){
         return versiculoDAO.findByQuery("%" + query + "%");
     }
 }
