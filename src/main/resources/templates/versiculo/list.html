@@ -29,6 +29,7 @@
     </style>
 </head>
 <body>
+<div th:replace="~{ layout/navbar :: navbar}"></div>
 <h1 th:text="${livro.livNome + ' - ' + capitulo}"></h1>
 <div th:each="versiculo : ${versiculos}">
     <p class="versiculo" th:utext="${versiculo.verVersiculo + ' - ' + versiculo.verTexto}"></p>

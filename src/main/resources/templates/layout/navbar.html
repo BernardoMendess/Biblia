@@ -9,32 +9,35 @@
 </head>
 <body>
 <nav th:fragment="navbar" class="navbar navbar-expand-lg bg-light mb-3" data-bs-theme="light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">BÍBLIA ALMEIDA CORRIGIDA FIEL</a>
-        <div class="collapse navbar-collapse" id="navbarColor03">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Antigo Testamento</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" th:href="@{/livro}">Listar livros</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Novo Testamento</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Listar autores</a>
-                    </div>
-                </li>
-            </ul>
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/biblia}">BÍBLIA ALMEIDA CORRIGIDA FIEL</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarColor03">
+<!--            <ul class="navbar-nav me-auto">-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Antigo Testamento</a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                        <a class="dropdown-item" th:href="@{/capitulo/{id}(id=${livro.id})}" th:text="${livro.livNome}" th:each="livro : ${livros}" th:if="${livro.livTesId == 1}">Gênesis</a>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Novo Testamento</a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">-->
+<!--                        <a class="dropdown-item" th:href="@{/capitulo/{id}(id=${livro.id})}" th:text="${livro.livNome}" th:each="livro : ${livros}" th:if="${livro.livTesId == 2}">Mateus</a>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
             <a class="d-flex" href="#">
                 <form th:action="@{/versiculos}" method="POST" class="form-group d-flex">
-                    <input type="text" placeholder="Buscar na Bíblia" name="query" class="form-control">
+                    <input type="text" placeholder="Buscar na Bíblia" id="query" name="query" class="form-control">
                     <button type="submit" class="btn btn-primary">BUSCAR</button>
                 </form>
             </a>
         </div>
     </div>
 </nav>
+
+
+
 
 <script src="../../static/js/3rd/popper.min.js" th:src="@{/js/3rd/popper.min.js}"></script>
 <script src="../../static/js/3rd/bootstrap.min.js" th:src="@{/js/3rd/bootstrap.min.js}"></script>
