@@ -23,6 +23,7 @@ public class VersiculoController {
             return "redirect:/biblia";
         }
 
+        model.addAttribute("query", query);
         model.addAttribute("versiculos",  versiculoService.findByQuery(query));
         return "versiculo/busca/list";
     }

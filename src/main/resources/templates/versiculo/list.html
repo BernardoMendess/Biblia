@@ -31,9 +31,14 @@
         <p class="versiculo" th:utext="${versiculo.verVersiculo + ' - ' + versiculo.verTexto}"></p>
     </div>
     <div class="btn-container">
-        <a th:href="@{/versiculo/retroceder/{id1}/{id2}(id1=${livro.id}, id2=${capitulo})}" class="btn btn-primary btn-left">ANTERIOR</a>
-        <a th:href="@{/versiculo/avancar/{id1}/{id2}(id1=${livro.id}, id2=${capitulo})}" class="btn btn-primary btn-right">PRÓXIMO</a>
+        <div class="btn-left">
+            <a th:if="${!(livro.id == 1 && capitulo == 1)}" th:href="@{/versiculo/retroceder/{id1}/{id2}(id1=${livro.id}, id2=${capitulo})}" class="btn btn-primary">ANTERIOR</a>
+        </div>
+        <div class="btn-right">
+            <a th:if="${!(livro.id == 66 && capitulo == 22)}" th:href="@{/versiculo/avancar/{id1}/{id2}(id1=${livro.id}, id2=${capitulo})}" class="btn btn-primary">PRÓXIMO</a>
+        </div>
     </div>
+
 </div>
 <script src="../../static/js/3rd/bootstrap.min.js" th:src="@{/js/3rd/bootstrap.min.js}"></script>
 </body>

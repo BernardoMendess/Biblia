@@ -13,7 +13,7 @@
         <a class="navbar-brand fs-3 fs-md-2" th:href="@{/biblia}">BÍBLIA ALMEIDA CORRIGIDA FIEL</a>
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarColor03">
             <form th:action="@{/versiculo}" method="POST" class="form-group d-flex">
-                <input type="text" placeholder="Buscar na Bíblia" id="query" name="query" minlength="4" class="form-control" required>
+                <input type="text" placeholder="Buscar na Bíblia" id="query" th:value="${query}" name="query" minlength="4" class="form-control" required>
                 <button type="submit" class="btn btn-primary">BUSCAR</button>
             </form>
         </div>
