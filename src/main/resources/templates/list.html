@@ -12,15 +12,15 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2>Antigo Testamento</h2>
+            <h2 style="font-size: 20px;">Antigo Testamento</h2>
             <div th:each="livro : ${livros}" th:if="${livro.livTesId == 1}">
-                <a th:href="@{/capitulo/{id}(id=${livro.id})}" th:text="${livro.livNome}"></a>
+                <a th:href="@{/capitulo/{id}(id=${livro.id})}" style="text-decoration: none; font-size: 18px;" th:text="${livro.livNome}"></a>
             </div>
         </div>
         <div class="col">
-            <h2>Novo Testamento</h2>
+            <h2 style="font-size: 20px;">Novo Testamento</h2>
             <div th:each="livro : ${livros}" th:if="${livro.livTesId == 2}">
-                <a th:href="@{/capitulo/{id}(id=${livro.id})}" th:text="${livro.livNome}"></a>
+                <a th:href="@{/capitulo/{id}(id=${livro.id})}" style="text-decoration: none; font-size: 18px;" th:text="${livro.livNome}"></a>
             </div>
         </div>
     </div>

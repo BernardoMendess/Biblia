@@ -1,19 +1,12 @@
 package com.hb.biblia.model;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table(name = "versiculos")
-@Getter
-@Setter
-public class Versiculo {
-    @Id
-    private long Id;
-    private long verLivId;
-    private long verCapitulo;
-    private long verVersiculo;
-    private String verTexto;
-
-}
+public record Versiculo (
+    @Id long Id,
+    long verLivId,
+    long verCapitulo,
+    long verVersiculo,
+    String verTexto) {}

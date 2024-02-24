@@ -4,30 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bíblia</title>
+    <link rel="stylesheet" href="../static/css/3rd/bootstrap.min.css" media="screen" th:href="@{/css/3rd/bootstrap.min.css}">
     <style>
-        body {
-            display: flex;
-            padding: 20px;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            height: 100%;
-            margin: 0;
-            background-color: #000;
-        }
-
         .versiculo {
-            width: 100%;
-            margin: 10px;
-            font-size: 18px;
-            color: #fff;
             text-align: left;
         }
     </style>
 </head>
 <body>
-<div th:each="versiculo : ${versiculos}">
-    <p class="versiculo" th:utext="${versiculo.livNome + ' - ' + versiculo.verCapitulo + ' - ' + versiculo.verVersiculo + ' - ' + versiculo.verTexto}"></p>
+<div th:replace="~{ layout/navbar :: navbar}"></div>
+<div class="container">
+    <div th:each="versiculo : ${versiculos}">
+        <p class="versiculo" th:utext="${versiculo.livNome + ' - ' + versiculo.verCapitulo + ' - ' + versiculo.verVersiculo + ' - ' + versiculo.verTexto}"></p>
+    </div>
 </div>
+<script src="../../static/js/3rd/bootstrap.min.js" th:src="@{/js/3rd/bootstrap.min.js}"></script>
 </body>
 </html>
