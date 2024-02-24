@@ -12,7 +12,7 @@
 <div class="container">
     <div class="row">
         <div th:each="cap : ${#numbers.sequence(1, livro.livCapitulo)}" class="col-sm-2 col-md-2 col-lg-1 m-2">
-            <a th:href="@{/versiculos/{id1}/{id2}(id1=${livro.id}, id2=${cap})}" style="text-decoration: none; font-size: 18px;" class="m-2" th:value="${cap}" th:text="${cap}"></a>
+            <a th:href="@{/versiculo/{id1}/{id2}(id1=${livro.id}, id2=${cap})}" style="text-decoration: none; font-size: 18px;" class="m-2" th:value="${cap}" th:text="${cap}"></a>
         </div>
     </div>
 </div>
